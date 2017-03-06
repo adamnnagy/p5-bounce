@@ -37,11 +37,13 @@ function draw() {
 class Ball {
 
   constructor(diameter, x, y) {
-    this.x = x;
-    this.y = y;
+    this.x = x+diameter;
+    this.y = y+diameter;
     this.diameter = diameter;
-    this.xspeed = 2;
-    this.yspeed = 2;
+    this.xspeed = random(1,2);
+    // *floor(random(-2, 1));
+    this.yspeed = random(1,2);
+    // *floor(random(-1, 1));
   }
 
   move() {
