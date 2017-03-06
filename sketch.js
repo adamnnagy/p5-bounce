@@ -4,7 +4,7 @@ var r, g, b = 0;
 
 function setup() {
   createCanvas(600,400);
-  balls.push(new Ball(20));
+  balls.push(new Ball(20, random(width), random(height)));
 
 }
 
@@ -36,9 +36,9 @@ function draw() {
 
 class Ball {
 
-  constructor(diameter) {
-    this.x = random(width);
-    this.y = random(height);
+  constructor(diameter, x, y) {
+    this.x = x;
+    this.y = y;
     this.diameter = diameter;
     this.xspeed = 2;
     this.yspeed = 2;
@@ -76,6 +76,6 @@ bounce() {
 
 
 function mouseClicked() {
-  balls.push(new Ball(20));
+  balls.push(new Ball(20, mouseX, mouseY));
   return false;
 }
